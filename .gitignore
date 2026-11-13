@@ -1,0 +1,31 @@
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Node / React
+node_modules/
+dist/
+.vite/
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Banco local e backups
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.backup
+
+# IDE e sistema operacional
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
