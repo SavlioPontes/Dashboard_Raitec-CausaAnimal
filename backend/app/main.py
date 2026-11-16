@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routes import animais
+from app.routes import animais, ocorrencias, estatisticas
 
 app = FastAPI(title="Dashboard Causa Animal")
 
@@ -19,6 +19,8 @@ app.add_middleware(
 
 # Registra as rotas
 app.include_router(animais.router)
+app.include_router(ocorrencias.router)
+app.include_router(estatisticas.router)
 
 
 @app.get("/")
