@@ -1,3 +1,4 @@
+import "./Header.css"
 import logo_raitec from "../assets/logo_raitec.png";
 
 interface HeaderProps {
@@ -9,14 +10,14 @@ function Header({nomeColetivo, logoColetivo}: HeaderProps) {
     return (
         <header>
             <h1>Dashboard</h1>
-            <div>
+            <div className="header-raitec">
                 <img src={logo_raitec} alt="Logo RAITec" />
-                <span>RAITec - Causa Animal</span>
+                <h1>RAITec - Causa Animal</h1>
             </div>
 
-            <div>
+            <div className="header-coletivo">
                 <img src={logoColetivo} alt={`Logo ${nomeColetivo}`} />
-                <span>{nomeColetivo}</span>
+                <h1>{nomeColetivo}</h1>
             </div>
         </header>
     )

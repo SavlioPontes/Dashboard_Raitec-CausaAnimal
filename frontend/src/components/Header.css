@@ -1,0 +1,32 @@
+header {
+    background-color: #b4d0ec;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 30px;
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+
+header h1 {
+    margin: 10;
+}
+
+.header-raitec img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.header-coletivo img {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
