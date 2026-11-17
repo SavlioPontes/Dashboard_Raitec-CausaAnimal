@@ -9,7 +9,6 @@ interface HeaderProps {
 function Header({nomeColetivo, logoColetivo}: HeaderProps) {
     return (
         <header>
-            <h1>Dashboard</h1>
             <div className="header-raitec">
                 <img src={logo_raitec} alt="Logo RAITec" />
                 <h1>RAITec - Causa Animal</h1>

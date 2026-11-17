@@ -13,7 +13,7 @@ interface GenderProps {
 }
 
 
-const colors = ["#1f81f1", "#f14242"];
+const colors = ["#68C6B4", "#E8A0B7"];
 
 function GenderChart({ showCats, showDogs }: GenderProps) {
   const [animals, setAnimals] = useState<Animal[]>([]);
