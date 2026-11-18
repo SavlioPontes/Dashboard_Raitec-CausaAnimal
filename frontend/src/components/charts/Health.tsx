@@ -42,7 +42,7 @@ function HealthChart({
     const [animals, setAnimals] = useState<Animal[]>([]);
 
     useEffect(() => {
-        fetch("http://localhost:8000/api/animais/")
+       fetch("/api/animais/")
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Erro ao buscar animais");

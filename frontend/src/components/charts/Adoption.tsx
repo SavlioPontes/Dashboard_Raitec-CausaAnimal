@@ -59,10 +59,10 @@ function AdoptionChart({
 
                 const [animalsResponse, occurrencesResponse] =
                     await Promise.all([
-                        fetch("http://localhost:8000/api/animais/", {
+                        fetch("/api/animais/", {
                             signal: controller.signal
                         }),
-                        fetch("http://localhost:8000/api/ocorrencias/", {
+                        fetch("/api/ocorrencias/", {
                             signal: controller.signal
                         })
                     ]);
