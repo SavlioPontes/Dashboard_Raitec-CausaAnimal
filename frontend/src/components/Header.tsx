@@ -1,6 +1,6 @@
 import "./Header.css";
 import { useEffect, useState } from "react";
-import logo_raitec from "../assets/logo_raitec.png";
+import logo_raitec from "../assets/logo_raitec.jpg";
 
 interface HeaderProps {
     nomeColetivo: string;
