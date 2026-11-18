@@ -1,44 +1,44 @@
-
-/* APRESENTAÇÃO */
+/* ============ APRESENTAÇÃO ============ */
 
 .dashboard {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 .dashboard h2 {
-    margin-bottom: 8px;
-    font-size: clamp(25px, 3vw, 34px);
-    font-weight: 800;
-    letter-spacing: -0.8px;
-    color: #263e4b;
+    margin-bottom: 6px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: var(--ink);
 }
 
 .dashboard h3 {
     margin: 0;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
-    color: #789098;
+    color: var(--muted);
 }
 
 
-/* FILTROS */
+/* ============ FILTROS ============ */
 
 .filtros {
-    padding: 24px 28px;
-    margin-bottom: 34px;
+    padding: 22px 26px;
+    margin-bottom: 32px;
 
-    background: #ffffff;
-    border: 1px solid #e5eef0;
+    background: var(--surface);
+    border: 1px solid var(--line);
     border-radius: 20px;
-
-    box-shadow: 0 6px 25px rgba(40, 75, 85, 0.04);
+    box-shadow: var(--shadow);
 }
 
 .filtros h2 {
-    margin-bottom: 18px;
-    font-size: 17px;
+    margin-bottom: 14px;
+    font-size: 16px;
     font-weight: 800;
-    color: #2d4854;
+    color: var(--ink);
 }
 
 .filtros-container {
@@ -49,7 +49,7 @@
 
 .filtro {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
@@ -63,14 +63,13 @@
     justify-content: center;
     gap: 10px;
 
-    padding: 11px 23px;
     min-height: 44px;
+    padding: 10px 22px;
 
-    border: 1px solid #dce8e9;
-    border-radius: 100px;
-
-    background: #f6f9fa;
-    color: #617a82;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--bg);
+    color: var(--muted);
 
     font-size: 14px;
     font-weight: 700;
@@ -85,69 +84,68 @@
         transform 0.2s ease;
 }
 
-/* Mantém o input acessível, mas invisível */
+/* Input acessível, mas invisível */
 
 .filtro input[type="checkbox"] {
     position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    inset: 0;
     margin: 0;
     opacity: 0;
     cursor: pointer;
 }
 
-/* Botão selecionado */
-
-.filtro label:has(input:checked) {
-    background: #e3f5f0;
-    border-color: #80c9b9;
-    color: #267e73;
-}
-
-/* Pequeno indicador de seleção */
+/* Indicador de seleção */
 
 .filtro label::before {
     content: "";
     width: 15px;
     height: 15px;
 
-    border: 2px solid #a8bdc3;
+    border: 2px solid var(--muted);
     border-radius: 50%;
-
-    background: #ffffff;
+    background: var(--surface);
     transition: all 0.2s ease;
 }
 
+/* Selecionado */
+
+.filtro label:has(input:checked) {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
 .filtro label:has(input:checked)::before {
-    background: #329b89;
-    border-color: #329b89;
-    box-shadow: inset 0 0 0 3px #ffffff;
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: inset 0 0 0 3px var(--surface);
 }
 
 .filtro label:hover {
     transform: translateY(-2px);
-    border-color: #8bcbbd;
+    border-color: var(--accent);
 }
 
 .filtro label:has(input:focus-visible) {
-    outline: 3px solid #95cfc6;
+    outline: 3px solid var(--accent-2);
     outline-offset: 3px;
 }
 
 
-/* ÁREA DOS GRÁFICOS */
+/* ============ ÁREA DOS GRÁFICOS ============ */
 
 .Charts {
     margin-top: 12px;
 }
 
 .Charts > h2 {
-    margin-bottom: 22px;
-    font-size: 24px;
+    margin-bottom: 20px;
+    font-size: 22px;
     font-weight: 800;
-    letter-spacing: -0.5px;
-    color: #263e4b;
+    letter-spacing: -0.3px;
+    color: var(--ink);
 }
 
 .charts-container {
@@ -160,13 +158,12 @@
 
 .chart {
     min-width: 0;
-    padding: 28px 28px 22px;
+    padding: 26px 28px 22px;
 
-    border: 1px solid #e5eef0;
+    background: var(--surface);
+    border: 1px solid var(--line);
     border-radius: 22px;
-
-    background: #ffffff;
-    box-shadow: 0 8px 30px rgba(37, 68, 81, 0.05);
+    box-shadow: var(--shadow);
 
     transition:
         transform 0.2s ease,
@@ -175,26 +172,52 @@
 
 .chart:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(37, 68, 81, 0.08);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Para um gráfico ocupar a linha inteira: className="chart chart-wide" */
+.chart-wide {
+    grid-column: 1 / -1;
 }
 
 .chart h3 {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     font-size: 18px;
     font-weight: 800;
-    color: #304957;
+    color: var(--ink);
 }
 
-/* Textos da legenda do Recharts */
+/* Textos do Recharts acompanham o tema (claro/escuro) */
+
+.chart .recharts-text,
+.chart .recharts-label {
+    fill: var(--ink);
+}
+
+.chart .recharts-cartesian-axis-tick-value {
+    fill: var(--muted);
+}
+
+.chart .recharts-cartesian-grid line {
+    stroke: var(--line);
+}
 
 .chart .recharts-legend-item-text {
+    color: var(--ink) !important;
     font-family: "Nunito Sans", sans-serif;
     font-size: 13px;
     font-weight: 600;
 }
 
+.chart .recharts-default-tooltip {
+    background: var(--surface) !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 12px;
+    color: var(--ink);
+}
 
-/* RESPONSIVIDADE */
+
+/* ============ RESPONSIVIDADE ============ */
 
 @media (max-width: 900px) {
     .charts-container {
@@ -213,7 +236,7 @@
 
     .filtro label {
         flex: 1;
-        padding: 11px 16px;
+        padding: 10px 16px;
     }
 
     .chart {
@@ -221,7 +244,7 @@
     }
 
     .Charts > h2 {
-        font-size: 21px;
+        font-size: 20px;
     }
 }
 
@@ -231,4 +254,95 @@
     .chart {
         transition: none;
     }
+
+    .filtro label:hover,
+    .chart:hover {
+        transform: none;
+    }
+}
+
+/* ============ GRÁFICO DE GÊNERO ============ */
+
+.gender {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 28px 40px;
+}
+
+.gender-donut {
+    position: relative;
+    width: 240px;
+    height: 240px;
+}
+
+.gender-centro {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.gender-centro strong {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: var(--ink);
+}
+
+.gender-centro span {
+    margin-top: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.gender-legenda {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+    min-width: 200px;
+}
+
+.gender-legenda li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 14px 18px;
+
+    background: var(--bg);
+    border-left: 5px solid var(--cor);
+    border-radius: 16px;
+}
+
+.gender-legenda li > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.gender-nome {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--ink);
+}
+
+.gender-qtd {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.gender-pct {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--cor);
 }

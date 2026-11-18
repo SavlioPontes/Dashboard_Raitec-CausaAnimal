@@ -1,17 +1,16 @@
-
 #root {
     width: 100%;
     min-height: 100vh;
 }
 
 main {
-    width: min(100%, 1440px);
+    width: min(100%, 1280px);
     margin: 0 auto;
-    padding: 40px 48px 70px;
+    padding: 40px 32px 72px;
 }
 
 @media (max-width: 768px) {
     main {
-        padding: 24px 18px 50px;
+        padding: 24px 16px 50px;
     }
 }

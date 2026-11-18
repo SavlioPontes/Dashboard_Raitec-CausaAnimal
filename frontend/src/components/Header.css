@@ -1,82 +1,170 @@
-
 header {
+    position: relative;
     width: 100%;
-    min-height: 106px;
-    padding: 18px 48px;
+    padding: 16px 32px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 24px;
 
-    background: #ffffff;
-    border-bottom: 1px solid #e1ebee;
-    box-shadow: 0 4px 20px rgba(45, 75, 85, 0.04);
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    transition: background-color 0.25s ease;
 }
 
+/* Faixa de cor da marca no topo */
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-2), var(--accent));
+}
+
+/* ---- RAITec ---- */
+
 .header-raitec,
+.header-direita {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Fundo branco fixo: o logo é azul-marinho e sumiria no modo escuro */
+.logo-tile {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+
+.logo-tile img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.header-titulo h1 {
+    margin: 0;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 24px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    color: var(--ink);
+}
+
+.header-titulo p {
+    margin: 2px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* ---- Coletivo ---- */
+
 .header-coletivo {
     display: flex;
     align-items: center;
-    gap: 16px;
-}
+    gap: 12px;
+    padding: 6px 18px 6px 6px;
 
-.header-raitec img {
-    width: 78px;
-    height: 78px;
-    object-fit: contain;
+    background: var(--accent-soft);
+    border: 1px solid transparent;
+    border-radius: 999px;
 }
 
 .header-coletivo img {
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
     border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid var(--surface);
 }
 
-header h1 {
-    margin: 0;
-    color: #263e4b;
-    font-size: 22px;
+.header-coletivo span {
+    font-size: 15px;
     font-weight: 800;
-    letter-spacing: -0.5px;
+    color: var(--ink);
 }
 
-.header-coletivo {
-    padding: 10px 16px;
-    border-radius: 16px;
-    background-color: #f3f8f7;
+/* ---- Botão de tema ---- */
+
+.tema-toggle {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--surface);
+    font-size: 18px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
-.header-coletivo h1 {
-    font-size: 17px;
-    font-weight: 700;
-    color: #46726e;
+.tema-toggle:hover {
+    border-color: var(--accent);
+    transform: rotate(12deg);
+}
+
+.tema-toggle:focus-visible {
+    outline: 3px solid var(--accent-2);
+    outline-offset: 2px;
 }
 
 @media (max-width: 768px) {
     header {
-        padding: 18px;
+        padding: 16px 16px 14px;
         flex-wrap: wrap;
-        gap: 14px;
+        gap: 12px;
     }
 
-    header h1 {
-        font-size: 18px;
+    .logo-tile {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
     }
 
-    .header-raitec img {
-        width: 52px;
-        height: 52px;
+    .logo-tile img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .header-titulo h1 {
+        font-size: 20px;
+    }
+
+    .header-direita {
+        width: 100%;
+        justify-content: space-between;
     }
 
     .header-coletivo img {
-        width: 42px;
-        height: 42px;
+        width: 36px;
+        height: 36px;
     }
 
-    .header-coletivo h1 {
-        font-size: 14px;
+    .header-coletivo span {
+        font-size: 13px;
     }
 }
-    
+
+@media (prefers-reduced-motion: reduce) {
+    .tema-toggle {
+        transition: none;
+    }
+
+    .tema-toggle:hover {
+        transform: none;
+    }
+}
