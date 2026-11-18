@@ -6,7 +6,7 @@
 
 .dashboard h2 {
     margin-bottom: 6px;
-    font-family: "Fraunces", Georgia, serif;
+    font-family: "Inter", Georgia, serif;
     font-size: clamp(30px, 4vw, 42px);
     font-weight: 600;
     line-height: 1.1;
@@ -19,118 +19,6 @@
     font-size: 16px;
     font-weight: 400;
     color: var(--muted);
-}
-
-
-/* ============ FILTROS ============ */
-
-.filtros {
-    padding: 22px 26px;
-    margin-bottom: 32px;
-
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-}
-
-.filtros h2 {
-    margin-bottom: 14px;
-    font-size: 16px;
-    font-weight: 800;
-    color: var(--ink);
-}
-
-.filtros-container {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.filtro {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-/* Checkboxes com aparência de botões */
-
-.filtro label {
-    position: relative;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    min-height: 44px;
-    padding: 10px 22px;
-
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    background: var(--bg);
-    color: var(--muted);
-
-    font-size: 14px;
-    font-weight: 700;
-
-    cursor: pointer;
-    user-select: none;
-
-    transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
-}
-
-/* Input acessível, mas invisível */
-
-.filtro input[type="checkbox"] {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* Indicador de seleção */
-
-.filtro label::before {
-    content: "";
-    width: 15px;
-    height: 15px;
-
-    border: 2px solid var(--muted);
-    border-radius: 50%;
-    background: var(--surface);
-    transition: all 0.2s ease;
-}
-
-/* Selecionado */
-
-.filtro label:has(input:checked) {
-    background: var(--accent-soft);
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
-.filtro label:has(input:checked)::before {
-    background: var(--accent);
-    border-color: var(--accent);
-    box-shadow: inset 0 0 0 3px var(--surface);
-}
-
-.filtro label:hover {
-    transform: translateY(-2px);
-    border-color: var(--accent);
-}
-
-.filtro label:has(input:focus-visible) {
-    outline: 3px solid var(--accent-2);
-    outline-offset: 3px;
 }
 
 
